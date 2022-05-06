@@ -1,5 +1,8 @@
 import { createRouter, createWebHistory } from "vue-router";
 import HomeView from "../views/HomeView.vue";
+import SoundsIndex from "../views/SoundsIndex.vue";
+import SoundsShow from "../views/SoundsShow.vue";
+import UsersNew from "../views/UsersNew.vue";
 
 const routes = [
   {
@@ -15,6 +18,9 @@ const routes = [
     // which is lazy-loaded when the route is visited.
     component: () => import(/* webpackChunkName: "about" */ "../views/AboutView.vue"),
   },
+  { path: "/sounds", name: "sounds-index", component: SoundsIndex },
+  { path: "/sounds/:id", name: "sounds-show", component: SoundsShow },
+  { path: "/users/:new", name: "users-new", component: UsersNew },
 ];
 
 const router = createRouter({
