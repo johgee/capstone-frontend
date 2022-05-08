@@ -7,14 +7,13 @@ export default {
       errors: [],
     };
   },
-  created: function () {},
   methods: {
-    createUser: function () {
+    submit: function () {
       axios
         .post("/users", this.newUserParams)
         .then((response) => {
-          console.log("/users create", response);
-          this.$router.push("/users");
+          console.log(response.data);
+          this.$router.push("/login");
         })
         .catch((error) => {
           console.log("users create error", error.response);
@@ -26,9 +25,9 @@ export default {
 </script>
 
 <template>
-  <div class="users=new">
+  <div class="users-new">
     <h1>New User</h1>
-    <form v-on:submit.prevent="createUser()">
+    <form v-on:submit.prevent="submit()">
       <ul>
         <li v-for="error in errors" v-bind:key="error">{{ error }}</li>
       </ul>

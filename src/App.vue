@@ -7,6 +7,8 @@
     <router-link to="/sounds">Our sounds</router-link>
     |
     <router-link to="/users/new">New user</router-link>
+    |
+    <router-link to="/login">Login</router-link>
   </div>
   <router-view />
 </template>
