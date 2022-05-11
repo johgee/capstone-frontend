@@ -2,8 +2,10 @@ import { createRouter, createWebHistory } from "vue-router";
 import HomeView from "../views/HomeView.vue";
 import SoundsIndex from "../views/SoundsIndex.vue";
 import SoundsShow from "../views/SoundsShow.vue";
+import PlaylistsIndex from "../views/PlaylistsIndex.vue";
 import UsersNew from "../views/UsersNew.vue";
 import LoginView from "../views/LoginView.vue";
+import LogoutView from "../views/LogoutView.vue";
 
 const routes = [
   {
@@ -23,6 +25,8 @@ const routes = [
   { path: "/sounds/:id", name: "sounds-show", component: SoundsShow },
   { path: "/users/:new", name: "users-new", component: UsersNew },
   { path: "/login", name: "login", component: LoginView },
+  { path: "/playlists", name: "playlists-index", component: PlaylistsIndex },
+  { path: "/logout", name: "logout-index", component: LogoutView },
 ];
 
 const router = createRouter({

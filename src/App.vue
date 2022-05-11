@@ -1,18 +1,39 @@
 <template>
-  <div id="nav">
-    <router-link to="/">Home</router-link>
-    |
-    <router-link to="/about">About</router-link>
-    |
-    <router-link to="/sounds">Our sounds</router-link>
-    |
-    <router-link to="/users/new">New user</router-link>
-    |
-    <router-link to="/login">Login</router-link>
+  <div>
+    <div id="nav">
+      <router-link to="/">Home</router-link>
+      |
+      <router-link to="/about">About</router-link>
+      |
+      <router-link to="/sounds">Our sounds</router-link>
+      |
+      <router-link v-if="!loggedOut" to="/playlists">My playlist</router-link>
+      |
+      <router-link v-if="loggedOut" to="/users/new">New user</router-link>
+      |
+      <router-link v-if="loggedOut" to="/login">Login</router-link>
+      |
+      <router-link v-if="!loggedOut" to="/logout">Logout</router-link>
+    </div>
+    <router-view />
   </div>
-  <router-view />
 </template>
 
+<script>
+export default {
+  data: function () {
+    return {
+      loggedOut: true,
+    };
+  },
+  watch: {
+    $route: function () {
+      this.loggedOut = !localStorage.jwt;
+      console.log(this.loggedOut);
+    },
+  },
+};
+</script>
 <style>
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;

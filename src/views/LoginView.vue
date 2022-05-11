@@ -29,6 +29,17 @@ export default {
 
 <template>
   <div class="login">
+    <div id="nav">
+      <router-link to="/">Home</router-link>
+      |
+      <router-link to="/about">About</router-link>
+      |
+      <router-link to="/sounds">Our sounds</router-link>
+      |
+      <router-link to="/users/new">New user</router-link>
+      |
+      <router-link to="/logout">Logout</router-link>
+    </div>
     <form v-on:submit.prevent="submit()">
       <h1>Login</h1>
       <ul>

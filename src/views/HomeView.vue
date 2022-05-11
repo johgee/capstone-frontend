@@ -4,9 +4,8 @@ export default {
   data: function () {
     return {
       sounds: [],
-      // newSoundParams: {},
-      // editSoundParams: {},
-      // currentSound: {},
+      search: "",
+      results: [],
     };
   },
   created: function () {
@@ -19,11 +18,28 @@ export default {
         this.sounds = response.data;
       });
     },
-
-    showSound: function (sound) {
-      this.currentSound = sound;
-      this.editSoundParams = sound;
-      document.querySelector("#sound-details").showModal();
+    searchSounds: function () {
+      axios.get("/youtube/search?search=" + this.search).then((response) => {
+        console.log("search index", response.data.items);
+        this.results = response.data.items;
+      });
+    },
+    addToPlaylist: function (sound) {
+      var addPlaylist = {
+        user_id: 2,
+        name: sound.snippet.title,
+        user_rating: 5,
+        youtube_code: sound.id.videoId,
+      };
+      axios
+        .post("/playlists", addPlaylist)
+        .then((response) => {
+          console.log("playlist create", response.data);
+          // this.playlsts.push(response.data);
+        })
+        .catch((error) => {
+          console.log("playlists create error", error.response);
+        });
     },
   },
 };
@@ -33,12 +49,25 @@ export default {
   <div class="home">
     <h1>Welcome to SOUNDS</h1>
     <div>
-      Search sounds:
-      <!-- <input type="text" v-model="" /> -->
-      <a href="/youtube/search" class="button">Search for your sounds</a>
-      <a href="/sounds" class="button">Check out our sounds</a>
-      <a href="/" class="button">Login</a>
-      <a href="/users" class="button">Create</a>
+      <div class="row">
+        Search sounds:
+        <input type="text" v-model="search" />
+        <button v-on:click="searchSounds()">Search for your sounds</button>
+      </div>
+      <div class="row">
+        <a href="/sounds" class="button">Check out our sounds</a>
+      </div>
+      <div class="row">
+        <a href="/login" class="button">Login</a>
+      </div>
+      <div class="row">
+        <a href="/users" class="button">Sign Up</a>
+      </div>
+    </div>
+    <div v-for="result in results" v-bind:key="result.etag">
+      <h2>{{ result.snippet.title }}</h2>
+      <iframe width="420" height="315" v-bind:src="`https://www.youtube.com/embed/${result.id.videoId}`"></iframe>
+      <div class="row"><button v-on:click="addToPlaylist(result)">Add to My Playlist</button></div>
     </div>
   </div>
 </template>
