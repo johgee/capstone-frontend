@@ -47,7 +47,7 @@ export default {
 
 <template>
   <div class="home">
-    <h1>Welcome to SOUNDS</h1>
+    <h1>Welcome to sleep ASMR</h1>
     <div>
       <div class="row">
         Search sounds:
@@ -56,12 +56,6 @@ export default {
       </div>
       <div class="row">
         <a href="/sounds" class="button">Check out our sounds</a>
-      </div>
-      <div class="row">
-        <a href="/login" class="button">Login</a>
-      </div>
-      <div class="row">
-        <a href="/users" class="button">Sign Up</a>
       </div>
     </div>
     <div v-for="result in results" v-bind:key="result.etag">

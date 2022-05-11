@@ -12,7 +12,7 @@ export default {
   methods: {
     indexSounds: function () {
       axios.get("/sounds").then((response) => {
-        console.log("sounds index", response);
+        // console.log("sounds index", response);
         this.sounds = response.data;
       });
     },
@@ -27,7 +27,6 @@ export default {
         .post("/playlists", addPlaylist)
         .then((response) => {
           console.log("playlist create", response.data);
-          // this.playlsts.push(response.data);
         })
         .catch((error) => {
           console.log("playlists create error", error.response);
