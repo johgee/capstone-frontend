@@ -1,6 +1,6 @@
 <template>
   <nav class="navbar navbar-light" style="background-color: #9370db">
-    <div class="container">
+    <div>
       <a class="navbar-brand" href="#">sleep ASMR</a>
       <button
         class="navbar-toggler"
@@ -76,10 +76,10 @@ export default {
 <style>
 body {
   background-image: url("https://images.unsplash.com/photo-1419242902214-272b3f66ee7a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1213&q=80");
-  min-height: 100%;
-  min-width: 100%;
-  position: fixed;
-  top: 0;
-  left: 0;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center;
+  font-family: "Karla", sans-serif;
 }
 </style>

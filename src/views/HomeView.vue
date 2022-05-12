@@ -47,15 +47,17 @@ export default {
 
 <template>
   <div class="home">
-    <h1>Welcome to sleep ASMR</h1>
+    <h1 class="page-title">Welcome to sleep ASMR</h1>
     <div>
       <div class="row">
         Search sounds:
         <input type="text" v-model="search" />
-        <button v-on:click="searchSounds()">Search for your sounds</button>
       </div>
+      <button class="purple-button" v-on:click="searchSounds()">Search for your sounds</button>
       <div class="row">
-        <a href="/sounds" class="button">Check out our sounds</a>
+        <a href="/sounds">
+          <button class="purple-button">Check out our sounds</button>
+        </a>
       </div>
     </div>
     <div v-for="result in results" v-bind:key="result.etag">
@@ -67,15 +69,22 @@ export default {
 </template>
 
 <style>
-.button {
+.purple-button {
   font: bold 11px Arial;
   text-decoration: none;
-  background-color: #eeeeee;
-  color: #333333;
-  padding: 2px 6px 2px 6px;
-  border-top: 1px solid #cccccc;
+  background-color: #800080;
+  color: #fff5ee;
+  padding: 12px 16px;
+  width: 250px;
+  /* border-top: 1px solid #cccccc;
   border-right: 1px solid #333333;
   border-bottom: 1px solid #333333;
-  border-left: 1px solid #cccccc;
+  border-left: 1px solid #cccccc; */
+}
+.home {
+  margin-left: 100px;
+}
+.page-title {
+  color: #800080;
 }
 </style>

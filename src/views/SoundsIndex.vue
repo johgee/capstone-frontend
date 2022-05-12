@@ -37,7 +37,7 @@ export default {
 </script>
 
 <template>
-  <div class="sounds-index">
+  <div class="container-fluid">
     <h1>Our Sounds</h1>
     <div v-for="sound in sounds" v-bind:key="sound.id">
       <h2>{{ sound.name }}</h2>
