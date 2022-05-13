@@ -49,10 +49,10 @@ export default {
   <div class="home">
     <h1 class="page-title text-center">Welcome to sleep ASMR</h1>
     <div class="text-center">
-      <div class="row text m-auto">
-        Search sounds:
-        <input type="text" v-model="search" />
-      </div>
+      <form class="form-inline" align="center">
+        <label class="form-label" for="form1">Search sound:</label>
+        <input id="form1" class="form-control" type="text" v-model="search" />
+      </form>
       <button class="purple-button" v-on:click="searchSounds()">Search for your sounds</button>
       <div class="row">
         <a href="/sounds">
@@ -69,12 +69,10 @@ export default {
 </template>
 
 <style>
-.row {
+.form-label {
   color: #fff5ee;
   font: bold 15px Arial;
   font-weight: bold;
-  /* margin: 25px; */
-  /* text-align: center; */
 }
 .purple-button {
   font: bold 13px Arial;

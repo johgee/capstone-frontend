@@ -8,10 +8,7 @@
 </template>
 
 <style>
-about {
-  color: bisque;
-}
-.text {
+.about {
   color: bisque;
   text-align: center;
 }
