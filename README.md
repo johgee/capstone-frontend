@@ -1,4 +1,10 @@
-# capstone-frontend
+CAPSTONE PROJECT
+project link?
+
+Install
+Clone the repository
+```git clone ```
+```cd capstone-frontend```
 
 ## Project setup
 ```
