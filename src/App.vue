@@ -1,6 +1,6 @@
 <template>
-  <nav class="navbar navbar-light" style="background-color: #9370db">
-    <div>
+  <nav class="navbar navbar-light navbar-expand-lg" style="background-color: #9370db">
+    <div class="container">
       <a class="navbar-brand" href="#">sleep ASMR</a>
       <button
         class="navbar-toggler"

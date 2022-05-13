@@ -28,7 +28,7 @@ export default {
 </script>
 
 <template>
-  <div class="playlists-index">
+  <div class="container text-center">
     <h1>My Playlist</h1>
     <div v-for="playlist in playlists" v-bind:key="playlist.id">
       <h2>{{ playlist.name }}</h2>

@@ -37,16 +37,30 @@ export default {
 </script>
 
 <template>
-  <div class="container-fluid">
-    <h1>Our Sounds</h1>
+  <div class="container text-center">
+    <h1 class="page-title">Our Sounds</h1>
     <div v-for="sound in sounds" v-bind:key="sound.id">
-      <h2>{{ sound.name }}</h2>
+      <h2 class="page-title">{{ sound.name }}</h2>
       <iframe width="420" height="315" v-bind:src="`https://www.youtube.com/embed/${sound.youtube_code}`"></iframe>
       <div class="row">
-        <button v-on:click="addToPlaylist(sound)">Add to My Playlist</button>
+        <button class="gray-button m-auto" v-on:click="addToPlaylist(sound)">Add to My Playlist</button>
       </div>
       <p>overall_rating: {{ sound.overall_rating }}</p>
       <router-link v-bind:to="`/sounds/${sound.id}`">More details</router-link>
     </div>
   </div>
 </template>
+
+<style>
+.page-title {
+  color: #b0e0e6;
+}
+.gray-button {
+  font: bold 11px Arial;
+  text-decoration: none;
+  background-color: #b0e0e6;
+  color: #000000;
+  padding: 12px 16px;
+  width: 250px;
+}
+</style>

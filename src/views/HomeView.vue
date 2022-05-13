@@ -69,17 +69,18 @@ export default {
 </template>
 
 <style>
+.row {
+  color: #fff5ee;
+  font: bold 15px Arial;
+}
 .purple-button {
-  font: bold 11px Arial;
+  font: bold 13px Arial;
   text-decoration: none;
   background-color: #800080;
   color: #fff5ee;
   padding: 12px 16px;
   width: 250px;
-  /* border-top: 1px solid #cccccc;
-  border-right: 1px solid #333333;
-  border-bottom: 1px solid #333333;
-  border-left: 1px solid #cccccc; */
+  margin: auto;
 }
 .home {
   margin-left: 100px;
