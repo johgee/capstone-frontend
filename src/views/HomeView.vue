@@ -47,9 +47,9 @@ export default {
 
 <template>
   <div class="home">
-    <h1 class="page-title">Welcome to sleep ASMR</h1>
-    <div>
-      <div class="row">
+    <h1 class="page-title text-center">Welcome to sleep ASMR</h1>
+    <div class="text-center">
+      <div class="row text m-auto">
         Search sounds:
         <input type="text" v-model="search" />
       </div>
@@ -72,6 +72,9 @@ export default {
 .row {
   color: #fff5ee;
   font: bold 15px Arial;
+  font-weight: bold;
+  /* margin: 25px; */
+  /* text-align: center; */
 }
 .purple-button {
   font: bold 13px Arial;
@@ -80,7 +83,7 @@ export default {
   color: #fff5ee;
   padding: 12px 16px;
   width: 250px;
-  margin: auto;
+  margin: 15px;
 }
 .home {
   margin-left: 100px;

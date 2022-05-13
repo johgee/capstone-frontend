@@ -45,7 +45,7 @@ export default {
       <div class="row">
         <button class="gray-button m-auto" v-on:click="addToPlaylist(sound)">Add to My Playlist</button>
       </div>
-      <p>overall_rating: {{ sound.overall_rating }}</p>
+      <p class="rating">overall_rating: {{ sound.overall_rating }}</p>
       <router-link v-bind:to="`/sounds/${sound.id}`">More details</router-link>
     </div>
   </div>
@@ -54,6 +54,8 @@ export default {
 <style>
 .page-title {
   color: #b0e0e6;
+  font-weight: bold;
+  margin-top: 25px;
 }
 .gray-button {
   font: bold 11px Arial;
@@ -62,5 +64,8 @@ export default {
   color: #000000;
   padding: 12px 16px;
   width: 250px;
+}
+.rating {
+  color: #ffc0cb;
 }
 </style>
