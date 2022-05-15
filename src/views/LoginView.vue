@@ -28,9 +28,9 @@ export default {
 </script>
 
 <template>
-  <div class="login">
+  <div class="login text-center">
     <form v-on:submit.prevent="submit()">
-      <h1>Login</h1>
+      <h1 class="login">Login</h1>
       <ul>
         <li v-for="error in errors" v-bind:key="error">{{ error }}</li>
       </ul>
@@ -46,3 +46,9 @@ export default {
     </form>
   </div>
 </template>
+
+<style>
+.login {
+  color: #b0e0e6;
+}
+</style>
