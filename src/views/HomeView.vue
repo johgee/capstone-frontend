@@ -60,10 +60,12 @@ export default {
         </a>
       </div>
     </div>
-    <div v-for="result in results" v-bind:key="result.etag">
-      <h2>{{ result.snippet.title }}</h2>
+    <div class="container text-center" v-for="result in results" v-bind:key="result.etag">
+      <h2 class="title">{{ result.snippet.title }}</h2>
       <iframe width="420" height="315" v-bind:src="`https://www.youtube.com/embed/${result.id.videoId}`"></iframe>
-      <div class="row"><button v-on:click="addToPlaylist(result)">Add to My Playlist</button></div>
+      <div class="row">
+        <button class="playlist m-auto" v-on:click="addToPlaylist(result)">Add to My Playlist</button>
+      </div>
     </div>
   </div>
 </template>
@@ -85,8 +87,21 @@ export default {
 }
 .home {
   margin-left: 100px;
+  margin-right: 100px;
 }
 .page-title {
   color: #800080;
+}
+.playlist {
+  font: bold 11px Arial;
+  text-decoration: none;
+  background-color: #b0e0e6;
+  color: #000000;
+  padding: 12px 16px;
+  width: 250px;
+}
+.title {
+  color: #b0e0e6;
+  margin-top: 100px;
 }
 </style>

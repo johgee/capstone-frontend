@@ -25,6 +25,9 @@
             <a class="nav-link" href="/sounds">Our sounds</a>
           </li>
           <li class="nav-item">
+            <router-link class="nav-link" v-if="!loggedOut" :to="`/users/${getUserId()}`">My Profile</router-link>
+          </li>
+          <li class="nav-item">
             <a class="nav-link" v-if="!loggedOut" href="/playlists">My playlist</a>
           </li>
           <li class="nav-item">
@@ -63,6 +66,11 @@ export default {
     return {
       loggedOut: true,
     };
+  },
+  methods: {
+    getUserId: function () {
+      return localStorage.user_id;
+    },
   },
   watch: {
     $route: function () {
